@@ -13,13 +13,13 @@ BASE_DIR = Path(__file__).parent
 CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = False
 
 # load production server from .env
-ALLOWED_HOSTS = ['wkdehf2347.pythonanywhere.com']
+ALLOWED_HOSTS =['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
 
 # Application definition
 
@@ -119,8 +119,9 @@ STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-# STATICFILES_DIRS = (
-#    os.path.join(CORE_DIR, 'core/static'),
-# )
+
+STATICFILES_DIRS = (
+    os.path.join(CORE_DIR, 'core/static'),
+)
 #############################################################
 #############################################################
