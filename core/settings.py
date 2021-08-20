@@ -19,7 +19,7 @@ SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
 DEBUG = False
 
 # load production server from .env
-ALLOWED_HOSTS =['52.79.111.31']
+ALLOWED_HOSTS =['54.180.201.4']
 
 # Application definition
 
